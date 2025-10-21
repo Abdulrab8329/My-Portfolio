@@ -1,16 +1,63 @@
-# React + Vite
+# 🌐 Aadarsh Portfolio Website  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A clean, modern, and fully responsive **Portfolio Website** built using **React.js, Tailwind CSS, Framer Motion, and Lucide React** — complete with dark/light mode, animations, and smooth page transitions.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Live Demo  
+🔗 [View Portfolio](https://aadarsh-portfolio-delta.vercel.app)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🧩 Tech Stack  
+- ⚛️ React.js  
+- 💨 Tailwind CSS  
+- 🎞️ Framer Motion  
+- 🔆 Lucide React  
+- 🧠 React Icons  
+- 🌐 Vercel (Deployment)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🌈 Features  
+✅ Fully responsive design  
+✅ Smooth animations and transitions  
+✅ Dark & Light mode support  
+✅ Reusable components (Navbar, Footer)  
+✅ Project showcase with live and GitHub links  
+✅ Theme toggle using Context API  
+✅ Organized routing with React Router  
+
+---
+
+## 🧱 Pages Overview  
+
+| Page | Description |
+|------|--------------|
+| 🏠 **Home** | Introduction section with profile image |
+| ⚙️ **Skills** | Lists all skills with animated percentage bars |
+| 💼 **Work** | Displays all projects with links to live sites & GitHub repos |
+| 👨‍💻 **About** | Aadarsh’s journey and background |
+| 📬 **Connect** | Contact info + YouTube channel link |
+
+---
+
+## 🎨 Color Palette  
+
+### 🌞 Light Mode  
+| Element | Color | Description |
+|----------|--------|-------------|
+| Navbar background | `#FFFFFF` | Clean white background |
+| Border | `#DBEAFE` | Soft light-blue border |
+| Text (default) | `#374151` | Neutral text |
+| Active Link | `#2563EB` | Vibrant blue highlight |
+
+### 🌙 Dark Mode  
+| Element | Color | Description |
+|----------|--------|-------------|
+| Navbar background | `#000000` | Pure black |
+| Text (default) | `#D1D5DB` | Soft gray |
+| Active Link | `#60A5FA` | Highlighted blue |
+| Border | `#1E3A8A` | Deep translucent blue |
+
+---
