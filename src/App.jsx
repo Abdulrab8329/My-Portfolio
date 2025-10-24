@@ -1,6 +1,7 @@
 import React from "react";
 import { Analytics } from "@vercel/analytics/react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { SpeedInsights } from "@vercel/speed-insights/react";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 
 import Home from "./pages/Home";
@@ -10,6 +11,16 @@ import About from "./pages/About";
 import Connect from "./pages/Connect";
 
 import Footer from "./components/Footer";
+
+const Trackers = () => {
+  const location = useLocation();
+  return (
+    <>
+      <Analytics />      
+      <SpeedInsights />   
+    </>
+  );
+};
 
 const App = () => {
   return (
@@ -23,8 +34,10 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/connect" element={<Connect />} />
       </Routes>
+
       <Footer />
-      <Analytics />
+
+      <Trackers />
     </Router>
   );
 };
