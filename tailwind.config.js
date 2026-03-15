@@ -6,8 +6,8 @@ export default {
         extend: {
             colors: {
                 page: {
-                    light: '#d7eae8',   // ← light-mode page background
-                    dark: 'rgb(45, 20, 86)',   // ← dark-mode page background
+                    light: '#35c4d356',   // ← light-mode page background
+                    dark: 'rgb(0, 0, 0)',   // ← dark-mode page background
                 },
                 surface: {
                     light: '#ffffff',
