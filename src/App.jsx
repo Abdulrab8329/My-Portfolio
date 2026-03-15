@@ -10,6 +10,7 @@ import Work from "./pages/Work";
 import About from "./pages/About";
 import Connect from "./pages/Connect";
 import Footer from "./components/Footer";
+import Stats from "./pages/Stats";
 
 const App = () => {
   return (
@@ -20,6 +21,10 @@ const App = () => {
       <main>
         <section id="home" style={{ scrollMarginTop: "100px" }}>
           <Home />
+        </section>
+
+        <section id="stats" style={{ scrollMarginTop: "100px" }}>
+          <Stats />
         </section>
 
         <section id="skills" style={{ scrollMarginTop: "100px" }}>

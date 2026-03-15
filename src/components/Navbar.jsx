@@ -43,17 +43,19 @@ export default function Navbar() {
   }, []);
 
   const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
     setIsOpen(false);
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 150);
   };
 
   const navbarBg =
     theme === "dark"
-      ? "bg-black border-b border-blue-900/40"
-      : "bg-white border-b border-blue-100";
+      ? "bg-page-dark border-b border-violet-900/40"
+      : "bg-page-light border-b border-teal-200/60";
 
   const linkVariants = {
     hidden: { opacity: 0, x: -10 },
@@ -68,7 +70,7 @@ export default function Navbar() {
     <motion.nav
       initial={{ y: -60, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.7, ease: "easeOut" }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
       className={`fixed top-0 left-0 w-full z-50 backdrop-blur-xl shadow-lg transition-all duration-500 ${navbarBg}`}
     >
       <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center px-4 sm:px-6 py-3 sm:py-4 overflow-x-hidden">
@@ -85,11 +87,11 @@ export default function Navbar() {
             }}
             className="flex items-center gap-2 group"
           >
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white font-bold group-hover:shadow-lg group-hover:shadow-blue-500/50 transition-all duration-300">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-teal-500 to-teal-600 dark:from-violet-500 dark:to-purple-600 flex items-center justify-center text-white font-bold group-hover:shadow-lg group-hover:shadow-teal-500/50 dark:group-hover:shadow-violet-500/50 transition-all duration-300">
               M
             </div>
             <span
-              className={`text-base sm:text-lg font-bold bg-clip-text bg-gradient-to-r from-blue-500 to-blue-700 text-transparent hidden sm:inline group-hover:opacity-80 transition-opacity`}
+              className={`text-base sm:text-lg font-bold bg-clip-text bg-gradient-to-r from-teal-600 to-teal-700 dark:from-violet-400 dark:to-purple-400 text-transparent group-hover:opacity-80 transition-opacity`}
             >
               Portfolio
             </span>
@@ -114,16 +116,16 @@ export default function Navbar() {
                   className={`px-3 sm:px-4 py-2 rounded-lg font-medium text-sm sm:text-base transition-all duration-300 relative cursor-pointer
                   ${isActive
                       ? theme === "dark"
-                        ? "text-blue-400 bg-blue-950"
-                        : "text-blue-600 bg-blue-100"
+                        ? "text-violet-300 bg-violet-950/60"
+                        : "text-teal-700 bg-teal-100"
                       : theme === "dark"
-                        ? "text-gray-300 hover:text-blue-400 hover:bg-blue-950/40"
-                        : "text-gray-700 hover:text-blue-700 hover:bg-blue-50"
+                        ? "text-violet-200 hover:text-violet-300 hover:bg-violet-950/40"
+                        : "text-gray-700 hover:text-teal-700 hover:bg-teal-50"
                     }`}
                 >
                   {name}
                   <motion.span
-                    className="absolute bottom-0 left-0 h-0.5 bg-blue-500 rounded-full"
+                    className="absolute bottom-0 left-0 h-0.5 bg-teal-500 dark:bg-violet-400 rounded-full"
                     initial={{ width: 0 }}
                     whileHover={{ width: "100%" }}
                     transition={{ duration: 0.3 }}
@@ -141,8 +143,8 @@ export default function Navbar() {
             whileHover={{ scale: 1.1 }}
             className={`p-2.5 rounded-lg transition-all duration-300 flex items-center justify-center cursor-pointer
               ${theme === "dark"
-                ? "bg-blue-900 text-white hover:shadow-blue-600/30"
-                : "bg-blue-100 text-blue-600 hover:shadow-blue-200"
+                ? "bg-violet-900/60 text-violet-200 hover:shadow-violet-600/30"
+                : "bg-teal-100 text-teal-700 hover:shadow-teal-200"
               }`}
           >
             <AnimatePresence mode="wait">
@@ -175,8 +177,8 @@ export default function Navbar() {
             whileTap={{ scale: 0.85 }}
             className={`md:hidden p-2.5 rounded-lg transition-all duration-300
               ${theme === "dark"
-                ? "bg-blue-950 text-blue-300 hover:bg-blue-900"
-                : "bg-blue-50 text-blue-700 hover:bg-blue-100"
+                ? "bg-violet-950 text-violet-300 hover:bg-violet-900"
+                : "bg-teal-50 text-teal-700 hover:bg-teal-100"
               }`}
           >
             <AnimatePresence mode="wait">
@@ -212,10 +214,10 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className={`md:hidden overflow-hidden border-t transition-colors duration-300
+            className={`md:hidden overflow-hidden border-t transition-colors duration-300 bg-page-light/95 dark:bg-page-dark/95
               ${theme === "dark"
-                ? "border-blue-900/40 bg-black/90"
-                : "border-blue-100 bg-white/90"
+                ? "border-violet-900/40"
+                : "border-teal-200/60"
               }`}
           >
             <ul className="flex flex-col gap-2 px-5 sm:px-6 py-4 w-full">
@@ -233,11 +235,11 @@ export default function Navbar() {
                       className={`block w-full text-left px-3 sm:px-4 py-2.5 rounded-lg font-medium transition-all duration-300 text-center
                       ${isActive
                           ? theme === "dark"
-                            ? "text-blue-400 bg-blue-950"
-                            : "text-blue-600 bg-blue-100"
+                            ? "text-violet-300 bg-violet-950/60"
+                            : "text-teal-700 bg-teal-100"
                           : theme === "dark"
-                            ? "text-gray-300 hover:text-blue-400 hover:bg-blue-950/40"
-                            : "text-gray-700 hover:text-blue-700 hover:bg-blue-50"
+                            ? "text-violet-200 hover:text-violet-300 hover:bg-violet-950/40"
+                            : "text-gray-700 hover:text-teal-700 hover:bg-teal-50"
                         }`}
                     >
                       {name}
