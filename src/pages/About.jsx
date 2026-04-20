@@ -24,7 +24,7 @@ const About = () => {
   const highlights = [
     {
       title: "React.js Specialist",
-      desc: "8+ months building production React apps with hooks, Redux, and REST APIs across live platforms.",
+      desc: "9+ months building production React apps with hooks, Redux, and REST APIs across live platforms.",
     },
     {
       title: "Ships to Production",

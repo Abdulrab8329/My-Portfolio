@@ -21,6 +21,15 @@ const Work = () => {
 
   const projects = [
     {
+      title: "Medical Lab Management System",
+      subtitle: "Full-Stack Diagnostic Workflow Platform",
+      live: "https://medical-laboratory-frontend.vercel.app/login",
+      desc: "I developed a full-stack medical lab management system using React, Node.js, Express, and PostgreSQL. The application is deployed with frontend and backend on Vercel, the database on Neon, and image storage on Cloudinary. It supports patient management, test workflows, result entry, PDF report generation, and role-based authentication using JWT.",
+      tech: ["React.js", "Node.js", "Express.js", "PostgreSQL", "JWT", "Cloudinary", "Neon", "Vercel"],
+      type: "live",
+      images: ["/medicallab1.png",  "/medicallab3.png"],
+    },
+    {
       title: "Node.js Revision Platform",
       subtitle: "Full-Stack Learning Platform",
       live: "https://node-js-revision-frontend.vercel.app/",
@@ -270,6 +279,35 @@ const Work = () => {
                 <p className={`text-sm leading-relaxed mt-3 mb-5 ${textPrimary}`}>
                   {project.desc}
                 </p>
+
+                {project.images?.length > 0 && (
+                  <div className="mb-5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                      {project.images.map((imagePath, imageIndex) => (
+                        <a
+                          key={imagePath}
+                          href={imagePath}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`group relative overflow-hidden rounded-xl border ${
+                            isDark ? "border-purple-400/20" : "border-teal-200/70"
+                          }`}
+                        >
+                          <img
+                            src={imagePath}
+                            alt={`${project.title} screenshot ${imageIndex + 1}`}
+                            className="h-32 w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                            loading="lazy"
+                          />
+                          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                        </a>
+                      ))}
+                    </div>
+                    <p className={`text-[11px] mt-2 ${isDark ? "text-purple-200/80" : "text-gray-500"}`}>
+                      Click any screenshot to open full size.
+                    </p>
+                  </div>
+                )}
 
                 {/* Tech Stack */}
                 <div className="flex flex-wrap gap-1.5 mb-6">
